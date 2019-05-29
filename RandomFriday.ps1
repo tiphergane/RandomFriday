@@ -15,7 +15,8 @@ function Pause ($Message="Press any key to continue...")
 }
 
 # Création de la barre de progression
-function Progress () {
+function Progress () 
+{
     $Status = (($i*100)/$seed)
     Write-Progress -Activity "Tirage au sort du gagant" -Status "$Status % Complete:" -PercentComplete $Status;
 }
@@ -23,13 +24,15 @@ function Progress () {
 $seed = Get-Random -Minimum 200 -Maximum 1000
 $i = 0
 
-while ($i -lt $seed) { 
+while ($i -lt $seed) 
+{ 
     $random = Get-Random -Minimum 1 -Maximum 5
     $i++
     Progress
 }
 
-switch ($random) {
+switch ($random) 
+{
     1 { Write-Output Miaou }
     2 { Write-Output Wouf }
     3 { Write-Output Tweet }
